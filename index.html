@@ -35,7 +35,6 @@
         }
     </style>
 </head>
-<!-- Rest of the HTML remains the same -->
 <body class="bg-gray-900 text-gray-100">
     <!-- Navbar -->
     <nav class="fixed w-full bg-gray-900 bg-opacity-90 backdrop-blur-sm z-50">
@@ -71,10 +70,11 @@
     <section id="home" class="min-h-screen flex items-center justify-center gradient-bg">
         <div class="text-center">
             <h1 class="text-5xl md:text-7xl font-bold mb-6">Raj Rajapaksha</h1>
-            <p class="text-xl md:text-2xl mb-8">Creative Developer,Music Producer & Digital Artist</p>
-            <button class="bg-white text-gray-900 px-8 py-3 rounded-full font-medium hover:bg-opacity-90 transition-all">
-                Get in touch
+            <p class="text-xl md:text-2xl mb-8">Creative Developer, Music Producer & Digital Artist</p>
+            <button onclick="incrementVisitorCount()" class="bg-white text-gray-900 px-8 py-3 rounded-full font-medium hover:bg-opacity-90 transition-all">
+                Welcome - Enter Web Site
             </button>
+            <p id="visitor-count-display" class="text-white mt-4"></p>
         </div>
     </section>
 
@@ -85,14 +85,14 @@
             <div class="grid md:grid-cols-2 gap-12">
                 <div class="space-y-6">
                     <h3 class="text-2xl font-semibold">Who I Am</h3>
-                    <p class="text-gray-300">I'm a creative developer with a passion for building beautiful, functional digital experiences. With over 5 years of experience in web development and design, I bring ideas to life through clean code and thoughtful design.</p>
+                    <p class="text-gray-300">I am a creative developer with a passion for creating beautiful and functional digital experiences. With over 20 years of experience in music production, I bring ideas to life through clean and thoughtful creations.</p>
                 </div>
                 <div class="space-y-6">
                     <h3 class="text-2xl font-semibold">What I Do</h3>
                     <ul class="space-y-4 text-gray-300">
-                        <li>✨ Frontend Development</li>
-                        <li>🎨 UI/UX Design</li>
-                        <li>💻 Web Applications</li>
+                        <li>🎤 Writing lyrics to suit any occasion, on any topic.</li>
+                        <li>🎼 State-of-the-art digital or analog music composition for any lyrics</li>
+                        <li>🎬 Preparation of screenplays for visual videos of any song</li>
                         <li>🚀 Performance Optimization</li>
                     </ul>
                 </div>
@@ -105,21 +105,16 @@
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold mb-12 text-center">Recent Work</h2>
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Project Cards -->
+                <!-- Project Card with YouTube Videos -->
                 <div class="bg-gray-800 rounded-lg p-6 hover:transform hover:-translate-y-2 transition-all duration-300">
-                    <div class="h-48 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg mb-4"></div>
-                    <h3 class="text-xl font-semibold mb-2">Project One</h3>
-                    <p class="text-gray-400">A modern e-commerce platform built with React and Node.js</p>
-                </div>
-                <div class="bg-gray-800 rounded-lg p-6 hover:transform hover:-translate-y-2 transition-all duration-300">
-                    <div class="h-48 bg-gradient-to-br from-blue-500 to-green-500 rounded-lg mb-4"></div>
-                    <h3 class="text-xl font-semibold mb-2">Project Two</h3>
-                    <p class="text-gray-400">Social media dashboard with real-time analytics</p>
-                </div>
-                <div class="bg-gray-800 rounded-lg p-6 hover:transform hover:-translate-y-2 transition-all duration-300">
-                    <div class="h-48 bg-gradient-to-br from-yellow-500 to-red-500 rounded-lg mb-4"></div>
-                    <h3 class="text-xl font-semibold mb-2">Project Three</h3>
-                    <p class="text-gray-400">AI-powered content management system</p>
+                    <h3 class="text-xl font-semibold mb-2">Project Videos</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <!-- Replace with real YouTube video links -->
+                        <a href="https://www.youtube.com/watch?v=Jj9ThnHZmOI" target="_blank">
+                            <img src="https://img.youtube.com/vi/Jj9ThnHZmOI/hqdefault.jpg" alt="Video Thumbnail" class="rounded-lg">
+                        </a>
+                        <!-- Repeat 11 more times for additional videos -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -151,43 +146,57 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-8 text-center text-gray-400">
+    <!-- Site Map Section -->
+    <section id="site-map" class="py-20 bg-gray-800">
         <div class="container mx-auto px-6">
-            <p>© 2024 Raj Rajapaksha. All rights reserved.</p>
+            <h2 class="text-3xl font-bold mb-12 text-center">Site Map</h2>
+            <div class="flex justify-center space-x-6">
+                <button onclick="switchTab(1)" class="px-4 py-2 bg-gray-700 rounded-lg focus:outline-none">Page 1</button>
+                <button onclick="switchTab(2)" class="px-4 py-2 bg-gray-700 rounded-lg focus:outline-none">Page 2</button>
+                <button onclick="switchTab(3)" class="px-4 py-2 bg-gray-700 rounded-lg focus:outline-none">Page 3</button>
+            </div>
+            <div id="page1-content" class="mt-8">
+                <!-- Content for Page 1 -->
+                <p class="text-center">Content for Page 1 here.</p>
+            </div>
+            <div id="page2-content" class="mt-8 hidden">
+                <!-- Content for Page 2 -->
+                <p class="text-center">Content for Page 2 here.</p>
+            </div>
+            <div id="page3-content" class="mt-8 hidden">
+                <!-- Content for Page 3 -->
+                <p class="text-center">Content for Page 3 here.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-6 bg-gray-900">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2023 Raj Rajapaksha. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Mobile menu toggle
         function toggleMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
+            document.getElementById('mobile-menu').classList.toggle('hidden');
         }
 
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
+        function incrementVisitorCount() {
+            let count = localStorage.getItem('visitorCount');
+            count = count ? parseInt(count) + 1 : 1;
+            localStorage.setItem('visitorCount', count);
+            document.getElementById('visitor-count-display').textContent = "Visitor Count: " + count;
+        }
 
-        // Scroll reveal animation
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('opacity-100', 'translate-y-0');
-                }
-            });
-        });
-
-        document.querySelectorAll('section > div').forEach((el) => {
-            el.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-1000');
-            observer.observe(el);
-        });
+        function switchTab(page) {
+            document.getElementById('page1-content').classList.add('hidden');
+            document.getElementById('page2-content').classList.add('hidden');
+            document.getElementById('page3-content').classList.add('hidden');
+            document.getElementById('page' + page + '-content').classList.remove('hidden');
+        }
+        
+        window.onload = incrementVisitorCount;
     </script>
 </body>
 </html>
